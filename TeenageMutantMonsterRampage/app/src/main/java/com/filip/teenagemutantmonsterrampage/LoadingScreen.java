@@ -17,8 +17,15 @@ public class LoadingScreen extends Screen {
 
     public void update(float deltaTime){
         Graphics g = game.getGraphics();
+
         Assets.background = game.getGraphics().newPixmap("Backgrond.png", Graphics.PixmapFormat.RGB565);
         Assets.mainMenu = game.getGraphics().newPixmap("buttons.png", Graphics.PixmapFormat.ARGB4444);
+        Assets.ready = game.getGraphics().newPixmap("Tap.png", Graphics.PixmapFormat.ARGB4444);
+        Assets.box = game.getGraphics().newPixmap("box.png", Graphics.PixmapFormat.ARGB4444);
+        Assets.resume = game.getGraphics().newPixmap("Resume.png", Graphics.PixmapFormat.ARGB4444);
+        Assets.pause = game.getGraphics().newPixmap("pause.png" , Graphics.PixmapFormat.ARGB4444);
+        Assets.back = game.getGraphics().newPixmap("Menu.png" , Graphics.PixmapFormat.ARGB4444);
+
         Assets.click = game.getAudio().newSound("Hit_Hurt.wav");
         Log.d(TAG, "Loading main menu");
         Settings.load(game.getFileIO());

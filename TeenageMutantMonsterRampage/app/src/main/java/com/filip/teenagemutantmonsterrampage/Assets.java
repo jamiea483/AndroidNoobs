@@ -13,6 +13,11 @@ public class Assets {
     public static Pixmap mainMenu;
     public static Pixmap option;
     public static Pixmap highscore;
+    public static Pixmap ready;
+    public static Pixmap box;
+    public static Pixmap pause;
+    public static Pixmap resume;
+    public static Pixmap back;
 
     public static Sound click;
     public static Sound hit;

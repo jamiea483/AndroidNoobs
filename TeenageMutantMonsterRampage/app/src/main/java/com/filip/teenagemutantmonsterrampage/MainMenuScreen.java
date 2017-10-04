@@ -24,21 +24,21 @@ public class MainMenuScreen extends Screen {
             if(event.type == TouchEvent.TOUCH_UP){
 
                     //New Game
-                if(inBounds(event, 300,  600, 192, 42)){
-                  // game.setScreen(new GameScreen(game));
+                if(inBounds(event, 250,  500, 300,47)){
+                   game.setScreen(new GameScreen(game));
                     if(Settings.soundEnable)
                         Assets.click.play(1);
                     return;
                 }
                 //Options
-                if(inBounds(event, 300, 600+100, 192, 42)) {
+                if(inBounds(event, 250, 500 + 150, 300,47)) {
                    // game.setScreen(new OptionScreen(game));
                    if(Settings.soundEnable)
                         Assets.click.play(1);
                     return;
                 }
                     //Highscore
-                if(inBounds(event, 300, 600+200, 192, 42)){
+                if(inBounds(event, 250, 500 + 300, 300,47)){
                    // game.setScreen(new HighScoreScreen(game));
                    if(Settings.soundEnable)
                         Assets.click.play(1);
@@ -53,9 +53,9 @@ public class MainMenuScreen extends Screen {
         Graphics g = game.getGraphics();
 
         g.drawPixmap(Assets.background, 0, 0);
-        g.drawPixmap(Assets.mainMenu, 300, 600 , 0, 0, 227, 36);
-        g.drawPixmap(Assets.mainMenu, 300, 600 + 100, 1, 36, 226,36);
-        g.drawPixmap(Assets.mainMenu, 300, 600 + 200, 1, 73, 226,36);
+        g.drawPixmap(Assets.mainMenu, 250, 500 , 0, 0, 300, 47);
+        g.drawPixmap(Assets.mainMenu, 250, 500 + 150, 1, 49, 300,47);
+        g.drawPixmap(Assets.mainMenu, 250, 500 + 300, 1, 96, 300,47);
 
 
     }
