@@ -23,13 +23,13 @@ public class GameScreen extends Screen {
    }
 
    GameState state = GameState.Ready;
-  //  World world;
+    World world;
     int oldScore = 0;
     String score = "0";
 
     public GameScreen(Game game){
         super(game);
-       // world = new World();
+        world = new World();
     }
 
     @Override
@@ -92,7 +92,7 @@ public class GameScreen extends Screen {
              */
         }
 
-
+    world.update(deltaTime);
     }
 
     private void updatePaused(List<TouchEvent> touchEvents) {
@@ -102,16 +102,16 @@ public class GameScreen extends Screen {
         for (int i = 0; i < len; i++) {
             TouchEvent event = touchEvents.get(i);
             if (event.type == TouchEvent.TOUCH_UP) {
-                if (event.x < 150 && event.x < 250 &&
-                        event.y < 550 && event.y < 650 ) {
+                if (event.x > 250 && event.x < 350 &&
+                        event.y > 550 && event.y < 650 ) {
                     if (Settings.soundEnable)
                         Assets.click.play(1);
                     state = GameState.Running;
                     return;
                 }
                 //menu button
-                if (event.x < 150 && event.x < 250 &&
-                        event.y < 700 && event.y < 750) {
+                if (event.x > 250 && event.x < 350 &&
+                        event.y > 700 && event.y < 750) {
                     if (Settings.soundEnable)
                         Assets.click.play(1);
                     game.setScreen(new MainMenuScreen(game));
@@ -177,8 +177,8 @@ public class GameScreen extends Screen {
     private void drawPauseUI(){
         Graphics g = game.getGraphics();
 
-        g.drawPixmap(Assets.resume, 150, 550);
-        g.drawPixmap(Assets.back, 150, 700);
+        g.drawPixmap(Assets.resume, 250, 550);
+        g.drawPixmap(Assets.back, 250, 700);
 
     }
 
