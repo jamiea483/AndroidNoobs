@@ -13,7 +13,8 @@ import java.io.OutputStreamWriter;
  */
 
 public class Settings {
-    public static boolean soundEnable = true;
+    public static boolean soundEnabled = true;
+    public static boolean musicEnabled = true;
     public static int[] highscores = new int[] {100, 80, 50, 30, 10};
 
     public static void load(FileIO files)
@@ -22,7 +23,7 @@ public class Settings {
         try
         {
             in = new BufferedReader(new InputStreamReader(files.readFile(".mrnom")));
-            soundEnable = Boolean.parseBoolean(in.readLine());
+            soundEnabled = Boolean.parseBoolean(in.readLine());
             for(int i = 0; i< highscores.length; i++)
             {
                 highscores[i] = Integer.parseInt(in.readLine());
@@ -57,7 +58,7 @@ public class Settings {
         try
         {
             out = new BufferedWriter(new OutputStreamWriter(files.writeFile(".mrnom")));
-            out.write(Boolean.toString(soundEnable));
+            out.write(Boolean.toString(soundEnabled));
             out.write("\n");
             for(int i = 0;i<highscores.length;i++)
             {

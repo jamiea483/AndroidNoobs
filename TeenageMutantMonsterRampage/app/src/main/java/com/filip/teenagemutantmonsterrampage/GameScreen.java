@@ -60,7 +60,7 @@ public class GameScreen extends Screen {
             TouchEvent event = touchEvents.get(i);
             if (event.type == TouchEvent.TOUCH_UP) {
                 if (event.x < 100 && event.y < 98) {
-                    if (Settings.soundEnable)
+                    if (Settings.soundEnabled)
                         Assets.click.play(1);
                     state = GameState.Pause;
                     return;
@@ -104,7 +104,7 @@ public class GameScreen extends Screen {
             if (event.type == TouchEvent.TOUCH_UP) {
                 if (event.x > 250 && event.x < 450 &&
                         event.y > 550 && event.y < 700 ) {
-                    if (Settings.soundEnable)
+                    if (Settings.soundEnabled)
                         Assets.click.play(1);
                     state = GameState.Running;
                     return;
@@ -112,7 +112,7 @@ public class GameScreen extends Screen {
                 //menu button
                 if (event.x > 250 && event.x < 450 &&
                         event.y > 700 && event.y < 800) {
-                    if (Settings.soundEnable)
+                    if (Settings.soundEnabled)
                         Assets.click.play(1);
                     game.setScreen(new MainMenuScreen(game));
                 }
@@ -130,7 +130,7 @@ public class GameScreen extends Screen {
             if (event.type == TouchEvent.TOUCH_UP) {
                 if (event.x <= 300 && event.x <= 300 + 200 &&
                         event.y <= 600 && event.y <= 600 + 200) {
-                    if (Settings.soundEnable)
+                    if (Settings.soundEnabled)
                         Assets.click.play(1);
                     game.setScreen(new MainMenuScreen(game));
                 }

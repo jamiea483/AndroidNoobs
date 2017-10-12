@@ -25,6 +25,8 @@ public class LoadingScreen extends Screen {
         Assets.resume = game.getGraphics().newPixmap("Resume.png", Graphics.PixmapFormat.ARGB4444);
         Assets.pause = game.getGraphics().newPixmap("pause.png" , Graphics.PixmapFormat.ARGB4444);
         Assets.back = game.getGraphics().newPixmap("Menu.png" , Graphics.PixmapFormat.ARGB4444);
+        Assets.settingsMenu = game.getGraphics().newPixmap("settings_buttons.png", Graphics.PixmapFormat.ARGB4444);
+        Assets.backButton = game.getGraphics().newPixmap("back_button.png", Graphics.PixmapFormat.ARGB4444);
 
         Assets.click = game.getAudio().newSound("Hit_Hurt.wav");
         Log.d(TAG, "Loading main menu");

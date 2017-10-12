@@ -26,21 +26,21 @@ public class MainMenuScreen extends Screen {
                     //New Game
                 if(inBounds(event, 250,  500, 300,47)){
                    game.setScreen(new GameScreen(game));
-                    if(Settings.soundEnable)
+                    if(Settings.soundEnabled)
                         Assets.click.play(1);
                     return;
                 }
                 //Options
                 if(inBounds(event, 250, 500 + 150, 300,47)) {
-                   // game.setScreen(new OptionScreen(game));
-                   if(Settings.soundEnable)
+                    game.setScreen(new SettingsScreen(game));
+                    if(Settings.soundEnabled)
                         Assets.click.play(1);
                     return;
                 }
                     //Highscore
                 if(inBounds(event, 250, 500 + 300, 300,47)){
                    // game.setScreen(new HighScoreScreen(game));
-                   if(Settings.soundEnable)
+                   if(Settings.soundEnabled)
                         Assets.click.play(1);
                     return;
                 }

@@ -18,6 +18,8 @@ public class Assets {
     public static Pixmap pause;
     public static Pixmap resume;
     public static Pixmap back;
+    public static Pixmap backButton;
+    public static Pixmap settingsMenu;
 
     public static Sound click;
     public static Sound hit;
