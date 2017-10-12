@@ -15,14 +15,14 @@ import java.util.List;
  */
 
 public class GameScreen extends Screen {
-   enum GameState{
-       Ready,
-       Running,
-       Pause,
-       GameOver
-   }
+    enum GameState{
+        Ready,
+        Running,
+        Pause,
+        GameOver
+    }
 
-   GameState state = GameState.Ready;
+    GameState state = GameState.Ready;
     World world;
     int oldScore = 0;
     String score = "0";
@@ -92,7 +92,7 @@ public class GameScreen extends Screen {
              */
         }
 
-    world.update(deltaTime);
+        world.update(deltaTime);
     }
 
     private void updatePaused(List<TouchEvent> touchEvents) {
@@ -192,10 +192,10 @@ public class GameScreen extends Screen {
 
         if (state == GameState.Running)
             state = GameState.Pause;
-       // if (world.gameover){
-            //Settings.addScore(world.score);
-          //  Settings.save(game.getFileIO());
-       // }
+        // if (world.gameover){
+        //Settings.addScore(world.score);
+        //  Settings.save(game.getFileIO());
+        // }
     }
 
     @Override

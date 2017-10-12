@@ -12,7 +12,7 @@ import java.io.OutputStreamWriter;
  * Created by jamie on 10/3/2017.
  */
 
-public class Settings {
+public class  Settings {
     public static boolean soundEnable = true;
     public static int[] highscores = new int[] {100, 80, 50, 30, 10};
 
