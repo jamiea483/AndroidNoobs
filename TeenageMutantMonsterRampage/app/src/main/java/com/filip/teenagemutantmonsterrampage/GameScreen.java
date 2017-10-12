@@ -15,14 +15,14 @@ import java.util.List;
  */
 
 public class GameScreen extends Screen {
-   enum GameState{
-       Ready,
-       Running,
-       Pause,
-       GameOver
-   }
+    enum GameState{
+        Ready,
+        Running,
+        Pause,
+        GameOver
+    }
 
-   GameState state = GameState.Ready;
+    GameState state = GameState.Ready;
     World world;
     int oldScore = 0;
     String score = "0";
@@ -92,7 +92,7 @@ public class GameScreen extends Screen {
              */
         }
 
-    world.update(deltaTime);
+        world.update(deltaTime);
     }
 
     private void updatePaused(List<TouchEvent> touchEvents) {
@@ -103,16 +103,26 @@ public class GameScreen extends Screen {
             TouchEvent event = touchEvents.get(i);
             if (event.type == TouchEvent.TOUCH_UP) {
                 if (event.x > 250 && event.x < 450 &&
+<<<<<<< HEAD
                         event.y > 550 && event.y < 700 ) {
                     if (Settings.soundEnabled)
+=======
+                        event.y > 550 && event.y < 650 ) {
+                    if (Settings.soundEnable)
+>>>>>>> 74d378d2c716028510052dcfd6068b097a6a8b0a
                         Assets.click.play(1);
                     state = GameState.Running;
                     return;
                 }
                 //menu button
                 if (event.x > 250 && event.x < 450 &&
+<<<<<<< HEAD
                         event.y > 700 && event.y < 800) {
                     if (Settings.soundEnabled)
+=======
+                        event.y > 700 && event.y < 750) {
+                    if (Settings.soundEnable)
+>>>>>>> 74d378d2c716028510052dcfd6068b097a6a8b0a
                         Assets.click.play(1);
                     game.setScreen(new MainMenuScreen(game));
                 }
@@ -128,7 +138,7 @@ public class GameScreen extends Screen {
         for (int i = 0; i < len; i++) {
             TouchEvent event = touchEvents.get(i);
             if (event.type == TouchEvent.TOUCH_UP) {
-                if (event.x <= 300 && event.x <= 300 + 200 &&
+                if (event.x <= 300 && event.x <= 300 + 201 &&
                         event.y <= 600 && event.y <= 600 + 200) {
                     if (Settings.soundEnabled)
                         Assets.click.play(1);
@@ -192,10 +202,10 @@ public class GameScreen extends Screen {
 
         if (state == GameState.Running)
             state = GameState.Pause;
-       // if (world.gameover){
-            //Settings.addScore(world.score);
-          //  Settings.save(game.getFileIO());
-       // }
+        // if (world.gameover){
+        //Settings.addScore(world.score);
+        //  Settings.save(game.getFileIO());
+        // }
     }
 
     @Override

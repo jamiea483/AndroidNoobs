@@ -25,22 +25,39 @@ public class MainMenuScreen extends Screen {
 
                     //New Game
                 if(inBounds(event, 250,  500, 300,47)){
+<<<<<<< HEAD
                    game.setScreen(new GameScreen(game));
                     if(Settings.soundEnabled)
+=======
+                    game.setScreen(new GameScreen(game));
+
+                    if(Settings.soundEnable)
+>>>>>>> 74d378d2c716028510052dcfd6068b097a6a8b0a
                         Assets.click.play(1);
                     return;
                 }
                 //Options
                 if(inBounds(event, 250, 500 + 150, 300,47)) {
+<<<<<<< HEAD
                     game.setScreen(new SettingsScreen(game));
                     if(Settings.soundEnabled)
+=======
+                   //game.setScreen(new OptionScreen(game));
+
+                   if(Settings.soundEnable)
+>>>>>>> 74d378d2c716028510052dcfd6068b097a6a8b0a
                         Assets.click.play(1);
                     return;
                 }
                     //Highscore
                 if(inBounds(event, 250, 500 + 300, 300,47)){
+<<<<<<< HEAD
                    // game.setScreen(new HighScoreScreen(game));
                    if(Settings.soundEnabled)
+=======
+                   game.setScreen(new HighScore(game));
+                   if(Settings.soundEnable)
+>>>>>>> 74d378d2c716028510052dcfd6068b097a6a8b0a
                         Assets.click.play(1);
                     return;
                 }
@@ -59,7 +76,6 @@ public class MainMenuScreen extends Screen {
 
 
     }
-
     @Override
     public void pause() {Settings.save(game.getFileIO());}
 
