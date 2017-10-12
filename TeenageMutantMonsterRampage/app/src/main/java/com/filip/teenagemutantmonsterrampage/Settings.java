@@ -12,14 +12,11 @@ import java.io.OutputStreamWriter;
  * Created by jamie on 10/3/2017.
  */
 
-<<<<<<< HEAD
+
 public class Settings {
     public static boolean soundEnabled = true;
     public static boolean musicEnabled = true;
-=======
-public class  Settings {
-    public static boolean soundEnable = true;
->>>>>>> 74d378d2c716028510052dcfd6068b097a6a8b0a
+
     public static int[] highscores = new int[] {100, 80, 50, 30, 10};
 
     public static void load(FileIO files)
