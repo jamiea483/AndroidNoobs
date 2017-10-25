@@ -143,7 +143,7 @@ public class GameScreen extends Screen {
     public void present(float deltaTime) {
         Graphics g = game.getGraphics();
         g.drawPixmap(Assets.background, 0, 0);
-        //drawWorld(world);
+        drawWorld(world);
         if(state == GameState.Ready)
             drawReadyUI();
         if(state == GameState.Running)
@@ -152,6 +152,14 @@ public class GameScreen extends Screen {
             drawPauseUI();
         if(state == GameState.GameOver)
             drawGameOverUI();
+    }
+
+    private void drawWorld(World world){
+        Graphics g = game.getGraphics();
+
+        g.drawPixmap(Assets.BuildingBackground, 150,475);
+        //Hunman animation goes here
+        g.drawPixmap(Assets.Building, 150,475);
     }
 
     private void drawReadyUI(){
@@ -165,12 +173,20 @@ public class GameScreen extends Screen {
 
         g.drawPixmap(Assets.pause, 0,0);
 
-        g.drawPixmap(Assets.box, 0,1100 - 300);
-        g.drawPixmap(Assets.box, 100,1100);
-        g.drawPixmap(Assets.box, 100+200,1100);
+        g.drawPixmap(Assets.boxBackground, 200,1100);
+        g.drawPixmap(Assets.box, 200,1100);
+
+       // g.drawPixmap(Assets.boxBackground, 100+200,1100);
+       // g.drawPixmap(Assets.box, 100+200,1100);
+
+        g.drawPixmap(Assets.boxBackground, 100+400,1100);
         g.drawPixmap(Assets.box, 100+400,1100);
-        g.drawPixmap(Assets.box, 700,1100 - 300);
-        g.drawPixmap(Assets.box, 700,1100- 150);
+
+       // g.drawPixmap(Assets.boxBackground, 700,1100 - 300);
+       // g.drawPixmap(Assets.box, 700,1100 - 300);
+
+       // g.drawPixmap(Assets.boxBackground, 700,1100- 150);
+       // g.drawPixmap(Assets.box, 700,1100- 150);
 
     }
 
