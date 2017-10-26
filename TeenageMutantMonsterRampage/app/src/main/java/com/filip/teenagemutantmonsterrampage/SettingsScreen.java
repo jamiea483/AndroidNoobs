@@ -26,7 +26,7 @@ public class SettingsScreen extends Screen {
             if(event.type == Input.TouchEvent.TOUCH_UP){
 
                 //SFX
-                if(inBounds(event, 300,  600, 192, 42)){
+                if(inBounds(event, 300,  600, 340, 54)){
 
                     if(Settings.soundEnabled)
                         Assets.click.play(1);
@@ -34,7 +34,7 @@ public class SettingsScreen extends Screen {
 
                 }
                 //Music
-                if(inBounds(event, 300, 600+100, 192, 42)) {
+                if(inBounds(event, 300, 600+100, 340, 54)) {
                     game.setScreen(new SettingsScreen(game));
                     if(Settings.soundEnabled)
                         Assets.click.play(1);
@@ -42,7 +42,7 @@ public class SettingsScreen extends Screen {
 
                 }
                 //Credits
-                if(inBounds(event, 300, 600+200, 192, 42)){
+                if(inBounds(event, 300, 600+200, 340, 54)){
                     //
                     if(Settings.soundEnabled)
                         Assets.click.play(1);
@@ -51,7 +51,7 @@ public class SettingsScreen extends Screen {
 
                 }
 
-                if ( inBounds(event, 300, 600+400, 192, 42)) {
+                if ( inBounds(event, 300, 600+400, 340, 42)) {
                     if(Settings.soundEnabled)
                         Assets.click.play(1);
                     game.setScreen(new MainMenuScreen(game));
@@ -67,18 +67,18 @@ public class SettingsScreen extends Screen {
         Graphics g = game.getGraphics();
         Settings.soundEnabled = !Settings.soundEnabled;
         if ( Settings.soundEnabled )
-            g.drawPixmap(Assets.settingsMenu, 300, 600 , 0, 0, 227, 36);
+            g.drawPixmap(Assets.settingsMenu, 200, 600 , 0, 0, 340, 54);
         else
-            g.drawPixmap(Assets.settingsMenu, 300, 600 , 227, 0, 227, 36);
+            g.drawPixmap(Assets.settingsMenu, 200, 600 , 340, 0, 340, 54);
     }
 
     private void switchMusic() {
         Graphics g = game.getGraphics();
         Settings.musicEnabled = !Settings.musicEnabled;
         if ( Settings.musicEnabled )
-            g.drawPixmap(Assets.settingsMenu, 300, 600 + 100, 1, 36, 226,36);
+            g.drawPixmap(Assets.settingsMenu, 200, 600 + 100, 1, 55, 340, 54);
         else
-            g.drawPixmap(Assets.settingsMenu, 300, 600 + 100, 227, 36, 226,36);
+            g.drawPixmap(Assets.settingsMenu, 200, 600 + 100, 340, 55, 340, 54);
     }
 
     @Override
@@ -87,16 +87,16 @@ public class SettingsScreen extends Screen {
 
         g.drawPixmap(Assets.background, 0, 0);
         if ( Settings.soundEnabled )
-            g.drawPixmap(Assets.settingsMenu, 300, 600 , 0, 0, 227, 36);
+            g.drawPixmap(Assets.settingsMenu, 200, 600 , 0, 0, 340, 54);
         else
-            g.drawPixmap(Assets.settingsMenu, 300, 600 , 227, 0, 227, 36);
+            g.drawPixmap(Assets.settingsMenu, 200, 600 , 340, 0, 340, 54);
         if ( Settings.musicEnabled )
-            g.drawPixmap(Assets.settingsMenu, 300, 600 + 100, 1, 36, 226,36);
+            g.drawPixmap(Assets.settingsMenu, 200, 600 + 100, 1, 55, 340, 54);
         else
-            g.drawPixmap(Assets.settingsMenu, 300, 600 + 100, 227, 36, 226,36);
-        g.drawPixmap(Assets.settingsMenu, 300, 600 + 200, 1, 73, 226,36);
+            g.drawPixmap(Assets.settingsMenu, 200, 600 + 100, 340, 55, 340, 54);
+        g.drawPixmap(Assets.settingsMenu, 200, 600 + 200, 1, 110, 340, 54);
 
-        g.drawPixmap(Assets.backButton, 300, 600 + 400, 0,0,226,36);
+        g.drawPixmap(Assets.backButton, 200, 600 + 400, 0,0,338,55);
     }
 
     @Override

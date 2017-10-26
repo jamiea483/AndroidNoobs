@@ -27,7 +27,7 @@ public class CreditsScreen extends Screen {
 
 
 
-                if ( inBounds(event, 300, 600+400, 192, 42)) {
+                if ( inBounds(event, 200, 600+400, 338, 55)) {
                     if(Settings.soundEnabled)
                         Assets.click.play(1);
                     game.setScreen(new SettingsScreen(game));
@@ -46,8 +46,8 @@ public class CreditsScreen extends Screen {
         Graphics g = game.getGraphics();
 
         g.drawPixmap(Assets.background, 0, 0);
-        g.drawPixmap(Assets.settingsMenu, 300, 600 - 300, 1, 73, 226,36);
-        g.drawPixmap(Assets.backButton, 300, 600 + 400, 0,0,226,36);
+        g.drawPixmap(Assets.settingsMenu, 200, 600 - 300, 1, 110, 340, 55);
+        g.drawPixmap(Assets.backButton, 200, 600 + 400, 0,0,338, 55);
     }
 
     @Override

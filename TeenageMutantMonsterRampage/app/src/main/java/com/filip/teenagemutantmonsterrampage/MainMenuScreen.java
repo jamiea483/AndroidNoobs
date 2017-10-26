@@ -24,7 +24,7 @@ public class MainMenuScreen extends Screen {
             if(event.type == TouchEvent.TOUCH_UP){
 
                     //New Game
-                if(inBounds(event, 250,  500, 300,47)){
+                if(inBounds(event, 175, 500 , 450, 70)){
                    game.setScreen(new GameScreen(game));
                     if(Settings.soundEnabled)
 
@@ -32,7 +32,7 @@ public class MainMenuScreen extends Screen {
                     return;
                 }
                 //Options
-                if(inBounds(event, 250, 500 + 150, 300,47)) {
+                if(inBounds(event, 175, 500  + 150, 450, 70)) {
                     game.setScreen(new SettingsScreen(game));
                     if(Settings.soundEnabled)
 
@@ -40,7 +40,7 @@ public class MainMenuScreen extends Screen {
                     return;
                 }
                     //Highscore
-                if(inBounds(event, 250, 500 + 300, 300,47)){
+                if(inBounds(event, 175, 500 + 300, 450, 72)){
 
                    game.setScreen(new HighScore(game));
                    if(Settings.soundEnabled)
@@ -56,9 +56,9 @@ public class MainMenuScreen extends Screen {
         Graphics g = game.getGraphics();
 
         g.drawPixmap(Assets.background, 0, 0);
-        g.drawPixmap(Assets.mainMenu, 250, 500 , 0, 0, 300, 47);
-        g.drawPixmap(Assets.mainMenu, 250, 500 + 150, 1, 49, 300,47);
-        g.drawPixmap(Assets.mainMenu, 250, 500 + 300, 1, 96, 300,47);
+        g.drawPixmap(Assets.mainMenu, 175, 500 , 0, 0, 450, 70);
+        g.drawPixmap(Assets.mainMenu, 175, 500 + 150, 0, 72, 450,70);
+        g.drawPixmap(Assets.mainMenu, 175, 500 + 300, 0, 145, 450,72);
 
 
     }
