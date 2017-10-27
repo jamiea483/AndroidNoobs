@@ -13,6 +13,12 @@ public class World {
 
     public boolean gameOver = false;
     public int score = 0;
+    public boolean fireBreathUsed = false;
+    private float maxFireBreathCooldown = 5f;
+    public float fireBreathCooldown = 5f;
+    public boolean electricTongueUsed = false;
+    private float maxElectricTongueCooldown = 5f;
+    public float electricTongueCooldown = 5f;
 
     boolean field[][] = new boolean[WORLD_WIDTH][WORLD_HEIGHT];
     float tickTime = 0;
@@ -25,6 +31,20 @@ public class World {
     public void update(float deltaTime){
         if(gameOver)
             return;
+        if (fireBreathUsed){
+            fireBreathCooldown += deltaTime;
+            if(fireBreathCooldown >= maxFireBreathCooldown){
+                fireBreathUsed = false;
+                fireBreathCooldown = maxFireBreathCooldown;
+            }
+        }
+        if (electricTongueUsed){
+            electricTongueCooldown += deltaTime;
+            if(electricTongueCooldown >= maxElectricTongueCooldown){
+                electricTongueUsed = false;
+                electricTongueCooldown = maxElectricTongueCooldown;
+            }
+        }
         tickTime += deltaTime;
         while (tickTime > tick){
             tickTime -= tick;

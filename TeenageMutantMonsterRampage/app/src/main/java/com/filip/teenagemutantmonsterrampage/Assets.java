@@ -14,15 +14,17 @@ public class Assets {
     public static Pixmap option;
     public static Pixmap highscore;
     public static Pixmap ready;
-    public static Pixmap box;
-    public static Pixmap boxBackground;
     public static Pixmap pause;
     public static Pixmap resume;
     public static Pixmap back;
     public static Pixmap backButton;
     public static Pixmap settingsMenu;
-    public static Pixmap Building;
     public static Pixmap BuildingBackground;
+    public static Pixmap Building;
+    public static Pixmap boxBackground;
+    public static Pixmap box;
+    public static Pixmap fireBreath;
+    public static Pixmap electricTongue;
 
     public static Sound click;
     public static Sound hit;

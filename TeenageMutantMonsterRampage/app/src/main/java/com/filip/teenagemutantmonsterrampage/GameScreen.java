@@ -65,31 +65,24 @@ public class GameScreen extends Screen {
                     state = GameState.Pause;
                     return;
                 }
-            }
-            //Switch Sides button
-            /*if(){
-            } */
 
-            //near window
-            /*if(){
-             }*/
+                //Fire Breath
+                if(event.x > 200 && event.x <200+100 &&
+                event.y > 1100 && event.y < 1100+98 &&
+                        world.fireBreathUsed == false){
+                    world.fireBreathUsed = true;
+                    world.fireBreathCooldown = 0f;
+                }
 
-            //far window
-            /*if(){
-            }*/
+                //Electric Tongue
+                if(event.x >100+400 && event.x < 100+500 &&
+                        event.y > 1100 && event.y < 1100+98 &&
+                        world.electricTongueUsed == false){
+                    world.electricTongueUsed = true;
+                    world.electricTongueCooldown = 0f;
+                }
+            }
 
-            //Fire Breath
-            /*if(){
-            }
-             */
-            //Move up
-            /*if(){
-            }
-             */
-            //Move Down
-            /*If(){
-            }
-             */
         }
 
         world.update(deltaTime);
@@ -173,20 +166,16 @@ public class GameScreen extends Screen {
 
         g.drawPixmap(Assets.pause, 0,0);
 
+        //Fire Breath
         g.drawPixmap(Assets.boxBackground, 200,1100);
+        g.drawPixmap(Assets.fireBreath, 200,1100,0,0, 70,Math.round(world.fireBreathCooldown) * 14);
         g.drawPixmap(Assets.box, 200,1100);
 
-       // g.drawPixmap(Assets.boxBackground, 100+200,1100);
-       // g.drawPixmap(Assets.box, 100+200,1100);
 
+        //Electric Tongue
         g.drawPixmap(Assets.boxBackground, 100+400,1100);
+       // g.drawPixmap(Assets.fireBreath, 100+400,1100, 0,world.electrictTongueCooldown * 40);
         g.drawPixmap(Assets.box, 100+400,1100);
-
-       // g.drawPixmap(Assets.boxBackground, 700,1100 - 300);
-       // g.drawPixmap(Assets.box, 700,1100 - 300);
-
-       // g.drawPixmap(Assets.boxBackground, 700,1100- 150);
-       // g.drawPixmap(Assets.box, 700,1100- 150);
 
     }
 
