@@ -145,6 +145,8 @@ public class GameScreen extends Screen {
             drawPauseUI();
         if(state == GameState.GameOver)
             drawGameOverUI();
+
+        drawText(g, score, g.getWidth()/2-score.length()*32/2,20);
     }
 
     private void drawWorld(World world){
@@ -167,14 +169,14 @@ public class GameScreen extends Screen {
         g.drawPixmap(Assets.pause, 0,0);
 
         //Fire Breath
-        g.drawPixmap(Assets.boxBackground, 200,1100);
-        g.drawPixmap(Assets.fireBreath, 200,1100,0,0, 70,Math.round(world.fireBreathCooldown) * 14);
+        g.drawPixmap(Assets.boxBackground, 220,1120);
+        g.drawPixmap(Assets.fireBreath, 215,1115,0,0, 70,Math.round(world.fireBreathCooldown) * 14);
         g.drawPixmap(Assets.box, 200,1100);
 
 
         //Electric Tongue
-        g.drawPixmap(Assets.boxBackground, 100+400,1100);
-       // g.drawPixmap(Assets.fireBreath, 100+400,1100, 0,world.electrictTongueCooldown * 40);
+        g.drawPixmap(Assets.boxBackground, 100+420,1120);
+       // g.drawPixmap(Assets.electricTongue, 100+400,1100, 0,world.electrictTongueCooldown * 40);
         g.drawPixmap(Assets.box, 100+400,1100);
 
     }
@@ -192,15 +194,41 @@ public class GameScreen extends Screen {
 
     }
 
+    public void drawText(Graphics g, String line, int x, int y){
+        int len = line.length();
+        for(int i = 0; i < len; i++){
+            char character = line.charAt(i);
+
+            if(character == ' '){
+                x+=31;
+                continue;
+            }
+
+            int srcX = 0;
+            int srcWidth = 0;
+            if(character == '.'){
+                srcX = 321;
+                srcWidth = 18;
+            }else{
+                srcX = (character -'0') * 32;
+                srcWidth = 32;
+            }
+
+            g.drawPixmap(Assets.highscore, x, y, srcX, 0, srcWidth, 48);
+            x+=srcWidth;
+
+        }
+    }
+
     @Override
     public void pause() {
 
         if (state == GameState.Running)
             state = GameState.Pause;
-        // if (world.gameover){
-        //Settings.addScore(world.score);
-        //  Settings.save(game.getFileIO());
-        // }
+         if (world.gameOver){
+        Settings.addScore(world.score);
+          Settings.save(game.getFileIO());
+         }
     }
 
     @Override
