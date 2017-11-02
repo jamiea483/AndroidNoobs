@@ -2,6 +2,8 @@ package com.filip.teenagemutantmonsterrampage;
 
 
 
+import android.graphics.Color;
+
 import com.filip.androidgames.framework.Game;
 import com.filip.androidgames.framework.Graphics;
 import com.filip.androidgames.framework.Input.TouchEvent;
@@ -86,6 +88,8 @@ public class GameScreen extends Screen {
         }
 
         world.update(deltaTime);
+
+
     }
 
     private void updatePaused(List<TouchEvent> touchEvents) {
@@ -136,16 +140,23 @@ public class GameScreen extends Screen {
     public void present(float deltaTime) {
         Graphics g = game.getGraphics();
         g.drawPixmap(Assets.background, 0, 0);
+<<<<<<< HEAD
         drawWorld(world);
+=======
+
+>>>>>>> AI
         if(state == GameState.Ready)
             drawReadyUI();
-        if(state == GameState.Running)
+        if(state == GameState.Running) {
             drawRunningUI();
+            drawWorld();
+        }
         if(state == GameState.Pause)
             drawPauseUI();
         if(state == GameState.GameOver)
             drawGameOverUI();
 
+<<<<<<< HEAD
         drawText(g, score, g.getWidth()/2-score.length()*32/2,20);
     }
 
@@ -155,6 +166,17 @@ public class GameScreen extends Screen {
         g.drawPixmap(Assets.BuildingBackground, 150,475);
         //Hunman animation goes here
         g.drawPixmap(Assets.Building, 150,475);
+=======
+
+
+    }
+
+    public void drawWorld() {
+        Graphics g = game.getGraphics();
+        for (Human human : world.humans) {
+            g.drawRect((int)human.pos.x, (int)human.pos.y - human.spriteHeight, 30, 70, Color.argb(44,44,44,255));
+        }
+>>>>>>> AI
     }
 
     private void drawReadyUI(){

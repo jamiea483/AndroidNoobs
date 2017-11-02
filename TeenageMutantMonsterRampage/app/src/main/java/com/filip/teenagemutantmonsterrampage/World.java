@@ -1,5 +1,11 @@
 package com.filip.teenagemutantmonsterrampage;
 
+import com.filip.androidgames.framework.Game;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 /**
  * Created by jamie on 10/4/2017.
  */
@@ -23,8 +29,20 @@ public class World {
     boolean field[][] = new boolean[WORLD_WIDTH][WORLD_HEIGHT];
     float tickTime = 0;
     static float tick = TICK_INITIAL;
+    List<Human> humans = new ArrayList<>();
+    Game game;
+
 
     public World(){
+
+        spawnHuman(0,"civilian");
+        spawnHuman(1,"civilian");
+        spawnHuman(2,"civilian");
+        spawnHuman(3,"civilian");
+        spawnHuman(0,"civilian");
+        spawnHuman(1,"civilian");
+        spawnHuman(2,"civilian");
+        spawnHuman(3,"civilian");
 
     }
 
@@ -46,8 +64,21 @@ public class World {
             }
         }
         tickTime += deltaTime;
+
         while (tickTime > tick){
             tickTime -= tick;
         }
+
+        for (Human human : humans )
+            human.update(deltaTime);
+
+    }
+
+    public void spawnHuman(int floor, String humanType ) {
+        Random rand = new Random();
+
+        if ( humanType == "civilian" )
+            humans.add(new Civilian(new Vector2(rand.nextInt(360)+260, Floors.floorsY[floor]), floor));
+
     }
 }
