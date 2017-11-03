@@ -140,44 +140,35 @@ public class GameScreen extends Screen {
     public void present(float deltaTime) {
         Graphics g = game.getGraphics();
         g.drawPixmap(Assets.background, 0, 0);
-<<<<<<< HEAD
         drawWorld(world);
-=======
 
->>>>>>> AI
         if(state == GameState.Ready)
             drawReadyUI();
         if(state == GameState.Running) {
             drawRunningUI();
-            drawWorld();
         }
         if(state == GameState.Pause)
             drawPauseUI();
         if(state == GameState.GameOver)
             drawGameOverUI();
 
-<<<<<<< HEAD
+
         drawText(g, score, g.getWidth()/2-score.length()*32/2,20);
     }
 
     private void drawWorld(World world){
         Graphics g = game.getGraphics();
 
-        g.drawPixmap(Assets.BuildingBackground, 150,475);
-        //Hunman animation goes here
-        g.drawPixmap(Assets.Building, 150,475);
-=======
-
-
-    }
-
-    public void drawWorld() {
-        Graphics g = game.getGraphics();
+        g.drawPixmap(Assets.BuildingBackground, 50,150);
         for (Human human : world.humans) {
             g.drawRect((int)human.pos.x, (int)human.pos.y - human.spriteHeight, 30, 70, Color.argb(44,44,44,255));
         }
->>>>>>> AI
+        g.drawPixmap(Assets.Building, 50,150);
+
+
+
     }
+
 
     private void drawReadyUI(){
         Graphics g = game.getGraphics();
