@@ -5,10 +5,10 @@ package com.filip.teenagemutantmonsterrampage;
  */
 
 public class Floors {
-    public static int floorsY[] = {1110,870,630,390,150};
-    public static int floorHeight = 240;
-    public static int bottomHalfStairsHeight = 120;
-    public static int stairsWidth = 170;
+    public static int floorsY[] = {1110,896,682,468,254};
+    public static int floorHeight = 214;
+    public static int bottomHalfStairsHeight = 107;
+    public static int stairsWidth = 107;
 
-    public static int stairsUpStartX[] = {705,180,705,377};
+    public static int stairsUpStartX[] = {630,60,630,340};
 }

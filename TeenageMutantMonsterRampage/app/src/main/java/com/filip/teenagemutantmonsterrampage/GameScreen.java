@@ -163,7 +163,7 @@ public class GameScreen extends Screen {
         for (Human human : world.humans) {
             g.drawRect((int)human.pos.x, (int)human.pos.y - human.spriteHeight, 30, 70, Color.argb(44,44,44,255));
         }
-        g.drawPixmap(Assets.Building, 50,150);
+        //g.drawPixmap(Assets.Building, 50,150);
 
 
 

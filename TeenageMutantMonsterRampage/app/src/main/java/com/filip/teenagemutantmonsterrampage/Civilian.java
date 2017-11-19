@@ -94,7 +94,7 @@ public class Civilian extends Human {
                 vel.y = -ySpd*0.7f;
             }
 
-            if ( stairsPos.y <= -240 ) {
+            if ( stairsPos.y <= -214 ) {
                 climbingStairs = false;
                 curFloor += 1;
                 stairsPos.x = 0;
@@ -118,7 +118,7 @@ public class Civilian extends Human {
                 vel.y = -ySpd*0.7f;
             }
 
-            if ( stairsPos.y <= -240 ) {
+            if ( stairsPos.y <= -214 ) {
                 climbingStairs = false;
                 curFloor += 1;
                 stairsPos.x = 0;
