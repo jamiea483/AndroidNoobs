@@ -19,6 +19,9 @@ public class Human {
     public float ySpd;
     public Vector2 stairsPos;
     public boolean climbingStairs;
+    public boolean topFloor;
+    public boolean safe;
+    public boolean canBeEaten;
 
     public Human(Vector2 position, int curFloor ) {
         pos = position;

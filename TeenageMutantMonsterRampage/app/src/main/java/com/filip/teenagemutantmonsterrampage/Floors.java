@@ -5,7 +5,7 @@ package com.filip.teenagemutantmonsterrampage;
  */
 
 public class Floors {
-    public static int floorsY[] = {1110,896,682,468,254};
+    public static int floorsY[] = {1100,896,682,468,254};
     public static int floorHeight = 214;
     public static int bottomHalfStairsHeight = 107;
     public static int stairsWidth = 107;

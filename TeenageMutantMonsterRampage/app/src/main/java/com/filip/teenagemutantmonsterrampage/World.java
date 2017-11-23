@@ -11,13 +11,14 @@ import java.util.Random;
  */
 
 public class World {
-    static final int WORLD_WIDTH = 4;
-    static final int WORLD_HEIGHT = 6;
+    static final int WINDOW_WIDTH = 95;
+    static final int WINDOW_HEIGHT = 65;
     static final int SCORE_INCREMENT = 10;
     static final float TICK_INITIAL = 0.5f;
     static final float TICK_DECREMENT = 0.05f;
 
     public boolean gameOver = false;
+    public int freeCivilian = 0;
     public int score = 0;
     public boolean fireBreathUsed = false;
     private float maxFireBreathCooldown = 5f;
@@ -26,7 +27,7 @@ public class World {
     private float maxElectricTongueCooldown = 5f;
     public float electricTongueCooldown = 5f;
 
-    boolean field[][] = new boolean[WORLD_WIDTH][WORLD_HEIGHT];
+    boolean field[][] = new boolean[WINDOW_WIDTH][WINDOW_HEIGHT];
     float tickTime = 0;
     static float tick = TICK_INITIAL;
     List<Human> humans = new ArrayList<>();
@@ -67,6 +68,16 @@ public class World {
 
         while (tickTime > tick){
             tickTime -= tick;
+
+            for(int x = 0; x < humans.size(); x++){
+               if( humans.get(x).topFloor == true && humans.get(x).safe == false ){
+                   freeCivilian++;
+                   humans.get(x).safe = true;
+               }
+            }
+            if (freeCivilian == 4){
+                gameOver = true;
+            }
         }
 
         for (Human human : humans )

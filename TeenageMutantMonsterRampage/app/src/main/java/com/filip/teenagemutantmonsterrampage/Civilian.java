@@ -20,6 +20,9 @@ public class Civilian extends Human {
         vel = new Vector2(0,0);
         stairsPos = new Vector2(0,0);
         climbingStairs = false;
+        topFloor = false;
+        safe = false;
+        canBeEaten = false;
 
     }
 
@@ -39,6 +42,9 @@ public class Civilian extends Human {
         if ( curFloor < 4 ) {
             goal = "go to floor above";
             state = "run";
+        }else {
+            state = "idle";
+            topFloor = true;
         }
 
     }
