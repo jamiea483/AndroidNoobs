@@ -168,6 +168,7 @@ public class GameScreen extends Screen {
     private void drawWorld(World world){
         Graphics g = game.getGraphics();
 
+        //Draws the civilian in the building
         g.drawPixmap(Assets.BuildingBackground, 50,150);
         for (Human human : world.humans) {
             g.drawRect((int)human.pos.x, (int)human.pos.y - human.spriteHeight, 30, 70, Color.argb(44,44,44,255));
@@ -214,6 +215,7 @@ public class GameScreen extends Screen {
 
     }
 
+    //Score Text
     public void drawText(Graphics g, String line, int x, int y){
         int len = line.length();
         for(int i = 0; i < len; i++){

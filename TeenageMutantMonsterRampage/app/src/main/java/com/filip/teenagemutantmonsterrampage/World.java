@@ -50,6 +50,7 @@ public class World {
     public void update(float deltaTime){
         if(gameOver)
             return;
+
         if (fireBreathUsed){
             fireBreathCooldown += deltaTime;
             if(fireBreathCooldown >= maxFireBreathCooldown){
@@ -57,6 +58,7 @@ public class World {
                 fireBreathCooldown = maxFireBreathCooldown;
             }
         }
+
         if (electricTongueUsed){
             electricTongueCooldown += deltaTime;
             if(electricTongueCooldown >= maxElectricTongueCooldown){
@@ -69,12 +71,15 @@ public class World {
         while (tickTime > tick){
             tickTime -= tick;
 
+            //Goes though the array of active civilian and checks if the are at the top and
+            //if they are makes them safe and adds them to the freeCivilian counter.
             for(int x = 0; x < humans.size(); x++){
                if( humans.get(x).topFloor == true && humans.get(x).safe == false ){
                    freeCivilian++;
                    humans.get(x).safe = true;
                }
             }
+            //Gameover equals true when 4 civilian reach the top
             if (freeCivilian == 4){
                 gameOver = true;
             }
