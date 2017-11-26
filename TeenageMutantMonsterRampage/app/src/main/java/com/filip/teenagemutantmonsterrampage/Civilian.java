@@ -16,7 +16,7 @@ public class Civilian extends Human {
         super(position, curFloor);
         spriteHeight = 70;
         xSpd = 100;
-        ySpd = 88;
+        ySpd = 107;
         vel = new Vector2(0,0);
         stairsPos = new Vector2(0,0);
         climbingStairs = false;

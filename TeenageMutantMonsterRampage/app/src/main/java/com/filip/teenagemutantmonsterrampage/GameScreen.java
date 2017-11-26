@@ -213,6 +213,7 @@ public class GameScreen extends Screen {
     private void drawGameOverUI(){
         Graphics g = game.getGraphics();
 
+        g.drawPixmap(Assets.back, 0, 0);
     }
 
     //Score Text
