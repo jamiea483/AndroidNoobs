@@ -15,20 +15,25 @@ import com.filip.androidgames.framework.Game;
 import com.filip.androidgames.framework.Graphics;
 import com.filip.androidgames.framework.Input;
 import com.filip.androidgames.framework.Screen;
+import com.filip.teenagemutantmonsterrampage.R;
+import com.google.android.gms.games.Games;
+import com.google.example.games.basegameutils.BaseGameActivity;
 
-public abstract class AndroidGame extends Activity implements Game {
+public abstract class AndroidGame extends BaseGameActivity implements Game {
     AndroidFastRenderView renderView;
     Graphics graphics;
     Audio audio;
     Input input;
     FileIO fileIO;
     Screen screen;
+    static final int REQUEST_LEADERBOARD = 100;
+    static final int REQUEST_ACHIEVEMENTS = 200;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         
@@ -104,5 +109,30 @@ public abstract class AndroidGame extends Activity implements Game {
     
     public Screen getCurrentScreen() {
         return screen;
+    }
+
+    public boolean isSignedIn(){
+        return getGameHelper().isSignedIn();
+    }
+
+    public void signIn(){
+        getGameHelper().beginUserInitiatedSignIn();
+    }
+
+    public void submitScore(int score){
+        Games.Leaderboards.submitScore(getGameHelper().getApiClient(),
+                getString(R.string.leaderboard_top_score),
+                score);
+    }
+
+    public void showLeaderboard(){
+        startActivityForResult(Games.Leaderboards.getLeaderboardIntent(getApiClient(),
+                getString(R.string.leaderboard_top_score)),
+                REQUEST_LEADERBOARD);
+    }
+
+    public void showAchievements(){
+        startActivityForResult(Games.Achievements.getAchievementsIntent(getApiClient()),
+                REQUEST_ACHIEVEMENTS);
     }
 }

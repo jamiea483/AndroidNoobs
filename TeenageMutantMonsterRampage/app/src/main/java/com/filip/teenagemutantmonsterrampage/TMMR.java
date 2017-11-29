@@ -18,4 +18,17 @@ public class TMMR extends AndroidGame {
         return new LoadingScreen(this);
 
     }
+
+    @Override
+    public void onSignInFailed() {
+
+    }
+
+   @Override
+    public void onSignInSucceeded() {
+
+   }
+
+
+
 }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_id"></string>
+    <string name="package_name"></string>
+    <string name="achievement_achievement_1"></string>
+    <string name="achievement_achievement_2"></string>
+    <string name="achievement_achievement_3"></string>
+    <string name="achievement_achievement_4"></string>
+    <string name="achievement_achievement_5"></string>
+    <string name="leaderboard_top_score"></string>
+</resources>

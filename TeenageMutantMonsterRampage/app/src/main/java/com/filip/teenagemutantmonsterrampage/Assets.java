@@ -25,6 +25,8 @@ public class Assets {
     public static Pixmap box;
     public static Pixmap fireBreath;
     public static Pixmap electricTongue;
+    public static Pixmap Leaderboard;
+    public static Pixmap Achievements;
 
     public static Sound click;
     public static Sound hit;

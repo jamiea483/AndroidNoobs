@@ -143,6 +143,8 @@ public class GameScreen extends Screen {
             }
 
         }
+
+       // game.submitScore(oldScore);
     }
 
     @Override

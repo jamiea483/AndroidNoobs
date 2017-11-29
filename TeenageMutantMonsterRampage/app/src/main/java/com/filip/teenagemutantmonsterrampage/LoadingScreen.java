@@ -32,6 +32,8 @@ public class LoadingScreen extends Screen {
         Assets.boxBackground = game.getGraphics().newPixmap("boxBackground.png", Graphics.PixmapFormat.ARGB4444);
         Assets.box = game.getGraphics().newPixmap("box.png", Graphics.PixmapFormat.ARGB4444);
         Assets.fireBreath = game.getGraphics().newPixmap("flamethrower_0005.png", Graphics.PixmapFormat.ARGB4444);
+        Assets.Leaderboard = game.getGraphics().newPixmap("LeaderboardButton.png", Graphics.PixmapFormat.ARGB4444);
+        Assets.Achievements = game.getGraphics().newPixmap("AchievementButton.png", Graphics.PixmapFormat.ARGB4444);
 
 
         Assets.click = game.getAudio().newSound("Hit_Hurt.wav");

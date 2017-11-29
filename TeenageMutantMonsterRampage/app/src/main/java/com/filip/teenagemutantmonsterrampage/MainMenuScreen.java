@@ -48,6 +48,23 @@ public class MainMenuScreen extends Screen {
                     return;
                 }
 
+                //Leaderboard
+                if(inBounds(event, 800 - 158, 1200 - 158 , 158, 158)){
+
+                    game.showLeaderboard();
+                    if(Settings.soundEnabled)
+                        Assets.click.play(1);
+                    return;
+                }
+
+                //Achievements
+                if(inBounds(event, 0, 1200 - 158, 158, 158)){
+
+                    game.showAchievements();
+                    if(Settings.soundEnabled)
+                        Assets.click.play(1);
+                    return;
+                }
             }
         }
     }
@@ -56,10 +73,16 @@ public class MainMenuScreen extends Screen {
         Graphics g = game.getGraphics();
 
         g.drawPixmap(Assets.background, 0, 0);
+        //play
         g.drawPixmap(Assets.mainMenu, 175, 500 , 0, 0, 450, 70);
+        //Options
         g.drawPixmap(Assets.mainMenu, 175, 500 + 150, 0, 72, 450,70);
+        //Highscore
         g.drawPixmap(Assets.mainMenu, 175, 500 + 300, 0, 145, 450,72);
-
+        //Leaderboard
+        g.drawPixmap(Assets.Leaderboard, 800 - 158, 1200 - 158);
+        //Achievements
+        g.drawPixmap(Assets.Achievements, 0, 1200 - 158);
 
     }
     @Override
