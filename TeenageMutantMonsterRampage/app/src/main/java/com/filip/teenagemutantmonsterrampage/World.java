@@ -75,8 +75,8 @@ public class World {
         if (gameOver)
             return;
 
+        //removes the humans on the floor firebreath was activited on
    if(fireActive) {
-
        Log.d(TAG, String.valueOf(fire.getFloor())  );
        Log.d(TAG, String.valueOf(fire.getPos().x)+","+ String.valueOf(fire.getPos().y));
         if(fire.getFloor() == 0){
@@ -126,7 +126,8 @@ public class World {
     }
 
 
-
+        //Resets the position of the firebreath
+        // and activites the cooldown timer for the ability
      if (fireBreathUsed) {
        fireActive = false;
          fire.setPos(0,0);
