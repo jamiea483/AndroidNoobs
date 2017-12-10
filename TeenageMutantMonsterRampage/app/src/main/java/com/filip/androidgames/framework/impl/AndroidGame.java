@@ -135,4 +135,22 @@ public abstract class AndroidGame extends BaseGameActivity implements Game {
         startActivityForResult(Games.Achievements.getAchievementsIntent(getApiClient()),
                 REQUEST_ACHIEVEMENTS);
     }
+    public void unlock(String achievement)
+    {
+        if(achievement == "A1") {
+            Games.Achievements.unlock(getApiClient(), getString(R.string.achievement_achievement_1));
+        }
+        if(achievement == "A2") {
+            Games.Achievements.unlock(getApiClient(), getString(R.string.achievement_achievement_2));
+        }
+        if(achievement == "A3") {
+            Games.Achievements.unlock(getApiClient(), getString(R.string.achievement_achievement_3));
+        }
+        if(achievement == "A4") {
+            Games.Achievements.unlock(getApiClient(), getString(R.string.achievement_achievement_4));
+        }
+        if(achievement == "A5") {
+            Games.Achievements.unlock(getApiClient(), getString(R.string.achievement_achievement_5));
+        }
+    }
 }

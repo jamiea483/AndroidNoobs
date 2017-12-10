@@ -3,12 +3,15 @@ package com.filip.teenagemutantmonsterrampage;
 
 
 import android.graphics.Color;
+import android.util.Log;
 
 import com.filip.androidgames.framework.Game;
 import com.filip.androidgames.framework.Graphics;
 import com.filip.androidgames.framework.Input.TouchEvent;
 import com.filip.androidgames.framework.Pixmap;
 import com.filip.androidgames.framework.Screen;
+import com.filip.androidgames.framework.impl.AndroidGame;
+import com.google.android.gms.games.Games;
 
 import java.util.List;
 
@@ -17,6 +20,8 @@ import java.util.List;
  */
 
 public class GameScreen extends Screen {
+    private static final String TAG = TMMR.class.getSimpleName();
+
     enum GameState{
         Ready,
         Running,
@@ -61,6 +66,8 @@ public class GameScreen extends Screen {
         for(int i = 0;i < len; i++) {
             TouchEvent event = touchEvents.get(i);
             if (event.type == TouchEvent.TOUCH_UP) {
+                //Check if tapped on a human
+                world.Capture(event.x,event.y);
                 if (event.x < 100 && event.y < 98) {
                     if (Settings.soundEnabled)
                         Assets.click.play(1);
@@ -68,26 +75,49 @@ public class GameScreen extends Screen {
                     return;
                 }
 
+
                 //Fire Breath
                 if(event.x > 200 && event.x <200+100 &&
                 event.y > 1100 && event.y < 1100+98 &&
-                        world.fireBreathUsed == false){
-                    world.fireBreathUsed = true;
-                    world.fireBreathCooldown = 0f;
+                        world.fireBreathUsed == false &&
+                        world.fireActive == false){
+                        world.fireActive = true;
+                    Log.d(TAG, "Ability Active"  );
                 }
-
-                //Electric Tongue
-                if(event.x >100+400 && event.x < 100+500 &&
+                else if (event.x > 200 && event.x <200+100 &&
                         event.y > 1100 && event.y < 1100+98 &&
-                        world.electricTongueUsed == false){
-                    world.electricTongueUsed = true;
-                    world.electricTongueCooldown = 0f;
+                        world.fireBreathUsed == false &&
+                        world.fireActive == true) {
+                    Log.d(TAG, "Ability Deactivited"  );
+                    world.fireActive = false;
+                    world.fire.setPos(0,0);
+
                 }
             }
+            if (event.type == TouchEvent.TOUCH_DOWN) {
 
+                //if FireBreath is Active set position to where the player tap
+                //and set the floor it was used on.
+                if(world.fireActive == true){
+                    world.fire.setPos(event.x,event.y);
+                    world.fire.applyAffect();
+                    Log.d(TAG, String.valueOf(world.fire.getPos().x)+","+ String.valueOf(world.fire.getPos().y));
+                    Log.d(TAG, "Ability set"  );
+                }
+                //Check if tapped on a human
+                world.Capture(event.x, event.y);
+            }
         }
 
+        //Unlock achievement for first human captured
+        /*if(world.score >= 10)
+        {
+            game.unlock("A2");
+        }*/
+
         world.update(deltaTime);
+
+
         if (world.gameOver){
             state = GameState.GameOver;
         }
@@ -124,7 +154,6 @@ public class GameScreen extends Screen {
                 }
             }
         }
-
     }
 
     private void updateGameOver(List<TouchEvent> touchEvents) {
@@ -144,7 +173,7 @@ public class GameScreen extends Screen {
 
         }
 
-       // game.submitScore(oldScore);
+        game.submitScore(oldScore);
     }
 
     @Override
@@ -195,12 +224,6 @@ public class GameScreen extends Screen {
         g.drawPixmap(Assets.boxBackground, 220,1120);
         g.drawPixmap(Assets.fireBreath, 215,1115,0,0, 70,Math.round(world.fireBreathCooldown) * 14);
         g.drawPixmap(Assets.box, 200,1100);
-
-
-        //Electric Tongue
-        g.drawPixmap(Assets.boxBackground, 100+420,1120);
-       // g.drawPixmap(Assets.electricTongue, 100+400,1100, 0,world.electrictTongueCooldown * 40);
-        g.drawPixmap(Assets.box, 100+400,1100);
 
     }
 

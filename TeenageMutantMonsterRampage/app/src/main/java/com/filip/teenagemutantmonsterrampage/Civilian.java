@@ -85,6 +85,7 @@ public class Civilian extends Human {
                     vel.x = xSpd;
 
             }
+
         }
     }
 

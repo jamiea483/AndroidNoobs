@@ -14,5 +14,6 @@ public interface Game
     public void submitScore(int score);
     public void showLeaderboard();
     public void showAchievements();
+    public void unlock(String achievement);
 }
 
