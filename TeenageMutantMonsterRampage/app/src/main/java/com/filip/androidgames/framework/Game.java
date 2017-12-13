@@ -15,5 +15,8 @@ public interface Game
     public void showLeaderboard();
     public void showAchievements();
     public void unlock(String achievement);
+    public void showBanner();
+    public void hideBanner();
+    public void showInterstitialAd();
 }
 

@@ -8,4 +8,6 @@
     <string name="achievement_achievement_4">CgkIjaaN7boVEAIQBA</string>
     <string name="achievement_achievement_5">CgkIjaaN7boVEAIQBQ</string>
     <string name="leaderboard_top_score">CgkIjaaN7boVEAIQBg</string>
+    <string name="banner_ad_unit_id"></string>
+    <string name="Interstitial_ad_unit_id"></string>
 </resources>
