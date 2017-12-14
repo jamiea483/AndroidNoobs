@@ -203,6 +203,7 @@ public class GameScreen extends Screen {
         g.drawPixmap(Assets.BuildingBackground, 50,150);
         for (Human human : world.humans) {
             g.drawRect((int)human.pos.x, (int)human.pos.y - human.spriteHeight, 30, 70, Color.argb(44,44,44,255));
+            g.drawSprite(Assets.humanSpriteSheet, (int)human.pos.x, (int)human.pos.y - human.spriteHeight, human.curFrame, !human.facingRight);
         }
         g.drawPixmap(Assets.Building, 50,150);
 

@@ -23,6 +23,8 @@ public class Civilian extends Human {
         topFloor = false;
         safe = false;
         canBeEaten = false;
+        curFrame = 0;
+        facingRight = true;
 
     }
 
@@ -148,6 +150,14 @@ public class Civilian extends Human {
             stairsPos.y += vel.y*deltaTime;
         }
 
+        curFrame++;
+        if ( curFrame > 7 )
+            curFrame = 0;
 
+
+        if ( vel.x < 0 )
+            facingRight = false;
+        else
+            facingRight = true;
     }
 }
