@@ -29,6 +29,7 @@ public class Assets {
     public static Pixmap Achievements;
     public static Pixmap humanSpriteSheetPixmap;
     public static SpriteSheet humanSpriteSheet;
+    public static SpriteSheet Fire;
 
     public static Sound click;
     public static Sound hit;

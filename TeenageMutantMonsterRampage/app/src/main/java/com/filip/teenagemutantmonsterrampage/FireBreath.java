@@ -12,6 +12,8 @@ public class FireBreath extends Abilities {
     public FireBreath(int posX, int posY){
         super (posX,posY);
         floor = 4;
+        curFrame = 0;
+        active = false;
     }
 
     //Checks the position of the firebreath and sets
@@ -36,5 +38,17 @@ public class FireBreath extends Abilities {
             Log.d(TAG, "Ability floor set to 3."  );
         }
 
+    }
+
+    @Override
+    public void update( float deltaTime ) {
+
+        if(active) {
+            curFrame++;
+        }
+        if ( curFrame > 30 ) {
+            curFrame = 0;
+            active = false;
+        }
     }
 }

@@ -27,8 +27,8 @@ public class World {
     public int score = 0;
     public boolean fireActive = false;
     public boolean fireBreathUsed = false;
-    private float maxFireBreathCooldown = 5f;
-    public float fireBreathCooldown = 5f;
+    private float maxFireBreathCooldown = 8f;
+    public float fireBreathCooldown = 8f;
     private static final String TAG = TMMR.class.getSimpleName();
     boolean field[][] = new boolean[WINDOW_WIDTH][WINDOW_HEIGHT];
     float tickTime = 0;
@@ -85,10 +85,12 @@ public class World {
                 if(humans.get(x).curFloor == 0){
                     humans.remove(x);
                     score += 10;
+
                 }
             }
             fireBreathUsed = true;
             fireBreathCooldown = 0;
+            fire.active = true;
 
         }else if(fire.getFloor() == 1){
             Log.d(TAG, "Use Abilitiy on 2"  );
@@ -100,6 +102,7 @@ public class World {
             }
             fireBreathUsed = true;
             fireBreathCooldown = 0;
+            fire.active = true;
 
         }else if(fire.getFloor() == 2){
             Log.d(TAG, "Use Abilitiy on 3"  );
@@ -111,6 +114,7 @@ public class World {
             }
             fireBreathUsed = true;
             fireBreathCooldown = 0;
+            fire.active = true;
 
         }else if(fire.getFloor() == 3){
             Log.d(TAG, "Use Abilitiy on 4"  );
@@ -122,6 +126,7 @@ public class World {
             }
             fireBreathUsed = true;
             fireBreathCooldown = 0;
+            fire.active = true;
         }
     }
 
@@ -130,8 +135,10 @@ public class World {
         // and activites the cooldown timer for the ability
      if (fireBreathUsed) {
        fireActive = false;
-         fire.setPos(0,0);
-         fire.floor = 4;
+       if(!fire.active) {
+           fire.setPos(0, 0);
+           fire.floor = 4;
+       }
          fireBreathCooldown += deltaTime;
              if (fireBreathCooldown >= maxFireBreathCooldown) {
                 fireBreathUsed = false;
@@ -154,10 +161,12 @@ public class World {
                 }
             }
                 //Gameover equals true when 4 civilian reach the top
-                if (freeCivilian == 7) {
+                if (freeCivilian == 4) {
                     gameOver = true;
                 }
             }
+
+            fire.update(deltaTime);
 
             for (Human human : humans)
                 human.update(deltaTime);
