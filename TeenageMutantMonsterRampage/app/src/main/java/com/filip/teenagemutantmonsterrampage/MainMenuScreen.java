@@ -24,27 +24,47 @@ public class MainMenuScreen extends Screen {
             if(event.type == TouchEvent.TOUCH_UP){
 
                     //New Game
-                if(inBounds(event, 300,  600, 192, 42)){
-                  // game.setScreen(new GameScreen(game));
-                    if(Settings.soundEnable)
+                if(inBounds(event, 175, 500 , 450, 70)){
+                   game.setScreen(new GameScreen(game));
+                    if(Settings.soundEnabled)
+
                         Assets.click.play(1);
                     return;
                 }
                 //Options
-                if(inBounds(event, 300, 600+100, 192, 42)) {
-                   // game.setScreen(new OptionScreen(game));
-                   if(Settings.soundEnable)
+                if(inBounds(event, 175, 500  + 150, 450, 70)) {
+                    game.setScreen(new SettingsScreen(game));
+                    if(Settings.soundEnabled)
+
                         Assets.click.play(1);
                     return;
                 }
                     //Highscore
-                if(inBounds(event, 300, 600+200, 192, 42)){
-                   // game.setScreen(new HighScoreScreen(game));
-                   if(Settings.soundEnable)
+                if(inBounds(event, 175, 500 + 300, 450, 72)){
+
+                   game.setScreen(new HighScore(game));
+                   if(Settings.soundEnabled)
                         Assets.click.play(1);
                     return;
                 }
 
+                //Leaderboard
+                if(inBounds(event, 800 - 158, 1200 - 158 , 158, 158)){
+
+                    game.showLeaderboard();
+                    if(Settings.soundEnabled)
+                        Assets.click.play(1);
+                    return;
+                }
+
+                //Achievements
+                if(inBounds(event, 0, 1200 - 158, 158, 158)){
+
+                    game.showAchievements();
+                    if(Settings.soundEnabled)
+                        Assets.click.play(1);
+                    return;
+                }
             }
         }
     }
@@ -53,13 +73,18 @@ public class MainMenuScreen extends Screen {
         Graphics g = game.getGraphics();
 
         g.drawPixmap(Assets.background, 0, 0);
-        g.drawPixmap(Assets.mainMenu, 300, 600 , 0, 0, 227, 36);
-        g.drawPixmap(Assets.mainMenu, 300, 600 + 100, 1, 36, 226,36);
-        g.drawPixmap(Assets.mainMenu, 300, 600 + 200, 1, 73, 226,36);
-
+        //play
+        g.drawPixmap(Assets.mainMenu, 175, 500 , 0, 0, 450, 70);
+        //Options
+        g.drawPixmap(Assets.mainMenu, 175, 500 + 150, 0, 72, 450,70);
+        //Highscore
+        g.drawPixmap(Assets.mainMenu, 175, 500 + 300, 0, 145, 450,72);
+        //Leaderboard
+        g.drawPixmap(Assets.Leaderboard, 800 - 158, 1200 - 158);
+        //Achievements
+        g.drawPixmap(Assets.Achievements, 0, 1200 - 158);
 
     }
-
     @Override
     public void pause() {Settings.save(game.getFileIO());}
 
