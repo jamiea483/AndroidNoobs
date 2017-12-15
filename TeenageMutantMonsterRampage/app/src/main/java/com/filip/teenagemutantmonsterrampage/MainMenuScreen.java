@@ -17,17 +17,17 @@ public class MainMenuScreen extends Screen {
     public void update(float deltaTime){
         Graphics g = game.getGraphics();
         List<TouchEvent> touchEvents = game.getInput().getTouchEvents();
-
         int len = touchEvents.size();
         for(int i = 0; i < len; i++){
             TouchEvent event = touchEvents.get(i);
+            game.showBanner();
             if(event.type == TouchEvent.TOUCH_UP){
 
                     //New Game
                 if(inBounds(event, 175, 500 , 450, 70)){
                    game.setScreen(new GameScreen(game));
                     if(Settings.soundEnabled)
-
+                        game.unlock("A1");
                         Assets.click.play(1);
                     return;
                 }
@@ -65,6 +65,7 @@ public class MainMenuScreen extends Screen {
                         Assets.click.play(1);
                     return;
                 }
+
             }
         }
     }
