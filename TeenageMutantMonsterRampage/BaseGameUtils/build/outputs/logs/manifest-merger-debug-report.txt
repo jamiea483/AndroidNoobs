@@ -1,0 +1,45 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml:18:1-28:12
+INJECTED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml:18:1-28:12
+INJECTED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml:18:1-28:12
+INJECTED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml:18:1-28:12
+INJECTED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml:18:1-28:12
+INJECTED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml:18:1-28:12
+INJECTED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml:18:1-28:12
+	package
+		ADDED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml:19:5-53
+		INJECTED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml:21:5-30
+		INJECTED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml:18:11-69
+	android:versionCode
+		ADDED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml:20:5-28
+		INJECTED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml
+application
+ADDED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml:24:5-26:19
+meta-data#unityplayer.ForwardNativeEventsToDalvik
+ADDED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml:25:9-98
+	android:value
+		ADDED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml:25:75-95
+	android:name
+		ADDED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml:25:20-74
+uses-sdk
+INJECTED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\src\main\AndroidManifest.xml
