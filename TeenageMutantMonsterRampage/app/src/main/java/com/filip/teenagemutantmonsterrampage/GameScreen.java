@@ -180,11 +180,6 @@ public class GameScreen extends Screen {
             }
 
         }
-<<<<<<< HEAD
-=======
-
-       //game.submitScore(oldScore);
->>>>>>> e3c5e0e3738625895679203fdc1ec98b4b7c52ea
     }
 
     @Override
