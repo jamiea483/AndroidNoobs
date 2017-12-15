@@ -180,7 +180,7 @@ public class GameScreen extends Screen {
 
         }
 
-       // game.submitScore(oldScore);
+       //game.submitScore(oldScore);
     }
 
     @Override
@@ -251,6 +251,8 @@ public class GameScreen extends Screen {
     private void drawGameOverUI(){
         Graphics g = game.getGraphics();
 
+        g.drawPixmap(Assets.GameOver, 30,100);
+        drawText(g, score, 296, 468 );
         g.drawPixmap(Assets.back, 0, 0);
     }
 
