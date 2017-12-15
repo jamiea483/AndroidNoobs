@@ -14,6 +14,7 @@ public class Assets {
     public static Pixmap mainMenu;
     public static Pixmap option;
     public static Pixmap highscore;
+    public static Pixmap GameOver;
     public static Pixmap ready;
     public static Pixmap pause;
     public static Pixmap resume;

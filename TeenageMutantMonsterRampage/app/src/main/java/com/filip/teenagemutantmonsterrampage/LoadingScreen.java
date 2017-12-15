@@ -37,6 +37,7 @@ public class LoadingScreen extends Screen {
         Assets.humanSpriteSheetPixmap = game.getGraphics().newPixmap( "spritesheet_human.png", Graphics.PixmapFormat.ARGB4444);
         Assets.humanSpriteSheet = game.getGraphics().newSpriteSheet( "spritesheet_human.png", Graphics.PixmapFormat.ARGB4444, 8, 1);
         Assets.Fire = game.getGraphics().newSpriteSheet("Fire.png", Graphics.PixmapFormat.ARGB4444,6,5);
+        Assets.GameOver = game.getGraphics().newPixmap("gameover.png", Graphics.PixmapFormat.ARGB4444);
 
         Assets.click = game.getAudio().newSound("Hit_Hurt.wav");
         Log.d(TAG, "Loading main menu");
