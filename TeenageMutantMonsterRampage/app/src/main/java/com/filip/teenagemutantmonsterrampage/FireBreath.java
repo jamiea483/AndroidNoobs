@@ -37,4 +37,7 @@ public class FireBreath extends Abilities {
         }
 
     }
+
+    @Override
+    public void Update(float detlaTime){}
 }

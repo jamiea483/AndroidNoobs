@@ -27,5 +27,6 @@ public class Abilities {
         return floor;
     }
 
+    public void Update(float detlatime){}
 
 }
