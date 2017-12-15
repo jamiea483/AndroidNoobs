@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BaseGameUtils/BaseGameUtils.iml" filepath="$PROJECT_DIR$/BaseGameUtils/BaseGameUtils.iml" />
+      <module fileurl="file://C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\BaseGameUtils.iml" filepath="C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\BaseGameUtils\BaseGameUtils.iml" />
       <module fileurl="file://$PROJECT_DIR$/TeenageMutantMonsterRampage.iml" filepath="$PROJECT_DIR$/TeenageMutantMonsterRampage.iml" />
+      <module fileurl="file://C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\TeenageMutantMonsterRampage.iml" filepath="C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\TeenageMutantMonsterRampage.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\app\app.iml" filepath="C:\Users\Jeric\Desktop\AndroidNoobs-Playground\TeenageMutantMonsterRampage\app\app.iml" />
     </modules>
   </component>
 </project>
