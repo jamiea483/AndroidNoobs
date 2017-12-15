@@ -16,19 +16,14 @@ public class TMMR extends AndroidGame {
     public Screen getStartScreen(){
         Log.d(TAG,"Loading assets.");
         return new LoadingScreen(this);
-
     }
-
     @Override
     public void onSignInFailed() {
 
     }
 
-   @Override
+    @Override
     public void onSignInSucceeded() {
 
-   }
-
-
-
+    }
 }

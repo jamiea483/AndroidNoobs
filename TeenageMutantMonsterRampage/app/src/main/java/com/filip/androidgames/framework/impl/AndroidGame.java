@@ -23,6 +23,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.games.Games;
 import com.google.example.games.basegameutils.BaseGameActivity;
 
@@ -40,6 +41,7 @@ public abstract class AndroidGame extends BaseGameActivity implements Game {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        //requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
 
 
@@ -63,7 +65,9 @@ public abstract class AndroidGame extends BaseGameActivity implements Game {
         fileIO = new AndroidFileIO(getAssets());
         audio = new AndroidAudio(this);
         input = new AndroidInput(this, renderView, scaleX, scaleY);
-       /* adView = new AdView(this);
+        // Add code
+        MobileAds.initialize(this, "ca-app-pub-3168949510205748~5903244826");
+        adView = new AdView(this);
         adView.setAdUnitId(getString(R.string.banner_ad_unit_id));
         adView.setAdSize(AdSize.SMART_BANNER);
 
@@ -76,7 +80,7 @@ public abstract class AndroidGame extends BaseGameActivity implements Game {
         mainLayout.addView(adView, adParams);
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(ca-app-pub-3940256099942544/1033173712);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3168949510205748/8137745676");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
         mInterstitialAd.setAdListener(new AdListener(){
@@ -84,9 +88,9 @@ public abstract class AndroidGame extends BaseGameActivity implements Game {
         public void onAdClosed() {
             mInterstitialAd.loadAd(new AdRequest.Builder().build());
              }
-        });*/
+        });
         screen = getStartScreen();
-        setContentView(renderView);
+        setContentView(mainLayout);
     }
 
     @Override
@@ -152,13 +156,13 @@ public abstract class AndroidGame extends BaseGameActivity implements Game {
 
     public void submitScore(int score){
         Games.Leaderboards.submitScore(getGameHelper().getApiClient(),
-                getString(R.string.leaderboard_top_score),
+                getString(R.string.leaderboard_tmmr_leaderboard),
                 score);
     }
 
     public void showLeaderboard(){
         startActivityForResult(Games.Leaderboards.getLeaderboardIntent(getApiClient(),
-                getString(R.string.leaderboard_top_score)),
+                getString(R.string.leaderboard_tmmr_leaderboard)),
                 REQUEST_LEADERBOARD);
     }
 
@@ -169,19 +173,19 @@ public abstract class AndroidGame extends BaseGameActivity implements Game {
     public void unlock(String achievement)
     {
         if(achievement == "A1") {
-            Games.Achievements.unlock(getApiClient(), getString(R.string.achievement_achievement_1));
+            Games.Achievements.unlock(getApiClient(), getString(R.string.achievement_getting_started));
         }
         if(achievement == "A2") {
-            Games.Achievements.unlock(getApiClient(), getString(R.string.achievement_achievement_2));
+            Games.Achievements.unlock(getApiClient(), getString(R.string.achievement_the_first_of_many));
         }
         if(achievement == "A3") {
-            Games.Achievements.unlock(getApiClient(), getString(R.string.achievement_achievement_3));
+            Games.Achievements.unlock(getApiClient(), getString(R.string.achievement_getting_the_hang_of_things));
         }
         if(achievement == "A4") {
-            Games.Achievements.unlock(getApiClient(), getString(R.string.achievement_achievement_4));
+            Games.Achievements.unlock(getApiClient(), getString(R.string.achievement_playing_with_fire));
         }
         if(achievement == "A5") {
-            Games.Achievements.unlock(getApiClient(), getString(R.string.achievement_achievement_5));
+            Games.Achievements.unlock(getApiClient(), getString(R.string.achievement_you_tried));
         }
     }
 
