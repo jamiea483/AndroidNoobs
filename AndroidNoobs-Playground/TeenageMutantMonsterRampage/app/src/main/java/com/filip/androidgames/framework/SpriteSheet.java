@@ -1,12 +1,11 @@
 package com.filip.androidgames.framework;
 
+/**
+ * Created by Jeric on 2017-12-15.
+ */
 import android.graphics.Bitmap;
-
 import com.filip.androidgames.framework.impl.AndroidPixmap;
 
-/**
- * Created by darkf on 2017-12-14.
- */
 
 public class SpriteSheet {
     Bitmap sprite;
@@ -25,5 +24,4 @@ public class SpriteSheet {
         cellHeight = this.sprite.getHeight()/rows;
         this.pixmap = new AndroidPixmap(sprite, Graphics.PixmapFormat.ARGB8888);
     }
-
 }

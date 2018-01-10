@@ -33,6 +33,8 @@ public class GameScreen extends Screen {
     World world;
     int oldScore = 0;
     String score = "0";
+    int freehumans = 0;
+    String free = "0";
 
     public GameScreen(Game game){
         super(game);
@@ -117,25 +119,31 @@ public class GameScreen extends Screen {
 
         world.update(deltaTime);
 
+        if(world.fire.active){
+            game.unlock("A4");
+        }
 
         if (world.gameOver){
             state = GameState.GameOver;
         }
-        if (oldScore != world.score){
+        if (oldScore != world.score) {
             oldScore = world.score;
             score = "" + oldScore;
-            if(Settings.soundEnabled) {
+            if (Settings.soundEnabled) {
                 //Assets.eat.play(1);
             }
-            if(oldScore > 10)
-            {
+            if (oldScore > 10) {
                 game.unlock("A2");
             }
-            if(oldScore > 100)
-            {
-                game.unlock("A2");
+            if (oldScore > 100) {
+                game.unlock("A3");
             }
         }
+            if(freehumans != world.freeCivilian){
+                freehumans = world.freeCivilian;
+                free = ""+freehumans;
+            }
+
 
     }
 
@@ -200,6 +208,8 @@ public class GameScreen extends Screen {
 
 
         drawText(g, score, g.getWidth()/2-score.length()*32/2,20);
+
+        drawText(g, free, (g.getWidth()/2-free.length()*32/2)+200, 20);
     }
 
     private void drawWorld(World world){
@@ -207,8 +217,12 @@ public class GameScreen extends Screen {
 
         //Draws the civilian in the building
         g.drawPixmap(Assets.BuildingBackground, 50,150);
+
+        if(world.fire.active) {
+            g.drawSprite(Assets.Fire, Floors.stairsUpStartX[1] + 60, Floors.floorsY[world.fire.getFloor()] - 120, world.fire.curFrame, false);
+        }
         for (Human human : world.humans) {
-            g.drawRect((int)human.pos.x, (int)human.pos.y - human.spriteHeight, 30, 70, Color.argb(44,44,44,255));
+            g.drawSprite(Assets.humanSpriteSheet, (int)human.pos.x, (int)human.pos.y - human.spriteHeight, human.curFrame, !human.facingRight);
         }
         g.drawPixmap(Assets.Building, 50,150);
 
@@ -243,7 +257,6 @@ public class GameScreen extends Screen {
 
     private void drawGameOverUI(){
         Graphics g = game.getGraphics();
-
         g.drawPixmap(Assets.GameOver, 30,100);
         drawText(g, score, 296, 468 );
         g.drawPixmap(Assets.back, 0, 0);

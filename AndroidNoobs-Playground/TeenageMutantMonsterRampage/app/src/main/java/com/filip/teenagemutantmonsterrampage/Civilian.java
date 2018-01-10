@@ -21,6 +21,8 @@ public class Civilian extends Human {
         stairsPos = new Vector2(0,0);
         climbingStairs = false;
         topFloor = false;
+        curFrame = 0;
+        facingRight = true;
         safe = false;
         canBeEaten = false;
 
@@ -149,5 +151,17 @@ public class Civilian extends Human {
         }
 
 
+        curFrame++;
+        if(curFrame > 7)
+        {
+            curFrame = 0;
+        }
+        if(vel.x < 0)
+        {
+            facingRight = false;
+        }
+        else
+            facingRight = true;
     }
+
 }

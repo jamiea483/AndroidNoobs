@@ -55,6 +55,7 @@ public class SettingsScreen extends Screen {
                     if(Settings.soundEnabled)
                         Assets.click.play(1);
                     game.setScreen(new MainMenuScreen(game));
+                    game.hideBanner();
                     return;
                 }
 

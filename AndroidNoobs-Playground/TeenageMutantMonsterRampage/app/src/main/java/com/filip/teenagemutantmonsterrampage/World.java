@@ -71,69 +71,83 @@ public class World {
             return;
 
         //removes the humans on the floor firebreath was activited on
-   if(fireActive) {
-       Log.d(TAG, String.valueOf(fire.getFloor())  );
-       Log.d(TAG, String.valueOf(fire.getPos().x)+","+ String.valueOf(fire.getPos().y));
-        if(fire.getFloor() == 0){
-            Log.d(TAG, "Use Abilitiy on 1"  );
-            for (int x = 0; x < humans.size(); x++){
-                if(humans.get(x).curFloor == 0){
-                    humans.remove(x);
-                    score += 10;
+        if(fireActive) {
+            Log.d(TAG, String.valueOf(fire.getFloor())  );
+            Log.d(TAG, String.valueOf(fire.getPos().x)+","+ String.valueOf(fire.getPos().y));
+            if(fire.getFloor() == 0){
+                Log.d(TAG, "Use Abilitiy on 1"  );
+                for (int x = 0; x < humans.size(); x++){
+                    if(humans.get(x).curFloor == 0){
+                        score += 10;
+                        Random rand = new Random();
+                        humans.get(x).curFloor = rand.nextInt(2);
+                        humans.get(x).pos = new Vector2(rand.nextInt(360)+260,Floors.floorsY[humans.get(x).curFloor]);
+                    }
                 }
-            }
-            fireBreathUsed = true;
-            fireBreathCooldown = 0;
+                fireBreathUsed = true;
+                fireBreathCooldown = 0;
+                fire.active = true;
 
-        }else if(fire.getFloor() == 1){
-            Log.d(TAG, "Use Abilitiy on 2"  );
-            for (int x = 0; x < humans.size(); x++){
-                if(humans.get(x).curFloor == 1){
-                    humans.remove(x);
-                    score += 10;
+            }else if(fire.getFloor() == 1){
+                Log.d(TAG, "Use Abilitiy on 2"  );
+                for (int x = 0; x < humans.size(); x++){
+                    if(humans.get(x).curFloor == 1){
+                        score += 10;
+                        Random rand = new Random();
+                        humans.get(x).curFloor = rand.nextInt(2);
+                        humans.get(x).pos = new Vector2(rand.nextInt(360)+260,Floors.floorsY[humans.get(x).curFloor]);
+                    }
                 }
-            }
-            fireBreathUsed = true;
-            fireBreathCooldown = 0;
+                fireBreathUsed = true;
+                fireBreathCooldown = 0;
+                fire.active = true;
 
-        }else if(fire.getFloor() == 2){
-            Log.d(TAG, "Use Abilitiy on 3"  );
-            for (int x = 0; x < humans.size(); x++){
-                if(humans.get(x).curFloor == 2){
-                    humans.remove(x);
-                    score += 10;
+            }else if(fire.getFloor() == 2){
+                Log.d(TAG, "Use Abilitiy on 3"  );
+                for (int x = 0; x < humans.size(); x++){
+                    if(humans.get(x).curFloor == 2){
+                        score += 10;
+                        Random rand = new Random();
+                        humans.get(x).curFloor = rand.nextInt(2);
+                        humans.get(x).pos = new Vector2(rand.nextInt(360)+260,Floors.floorsY[humans.get(x).curFloor]);
+                    }
                 }
-            }
-            fireBreathUsed = true;
-            fireBreathCooldown = 0;
+                fireBreathUsed = true;
+                fireBreathCooldown = 0;
+                fire.active = true;
 
-        }else if(fire.getFloor() == 3){
-            Log.d(TAG, "Use Abilitiy on 4"  );
-            for (int x = 0; x < humans.size(); x++){
-                if(humans.get(x).curFloor == 3){
-                    humans.remove(x);
-                    score += 10;
+            }else if(fire.getFloor() == 3){
+                Log.d(TAG, "Use Abilitiy on 4"  );
+                for (int x = 0; x < humans.size(); x++){
+                    if(humans.get(x).curFloor == 3){
+                        score += 10;
+                        Random rand = new Random();
+                        humans.get(x).curFloor = rand.nextInt(2);
+                        humans.get(x).pos = new Vector2(rand.nextInt(360)+260,Floors.floorsY[humans.get(x).curFloor]);
+                    }
                 }
+                fireBreathUsed = true;
+                fireBreathCooldown = 0;
+                fire.active = true;
             }
-            fireBreathUsed = true;
-            fireBreathCooldown = 0;
         }
-    }
 
 
         //Resets the position of the firebreath
         // and activites the cooldown timer for the ability
-     if (fireBreathUsed) {
-       fireActive = false;
-         fire.setPos(0,0);
-         fire.floor = 4;
-         fireBreathCooldown += deltaTime;
-             if (fireBreathCooldown >= maxFireBreathCooldown) {
+        if (fireBreathUsed) {
+            fireActive = false;
+            if(!fire.active) {
+                fire.setPos(0, 0);
+                fire.floor = 4;
+            }
+            fireBreathCooldown += deltaTime;
+            if (fireBreathCooldown >= maxFireBreathCooldown) {
                 fireBreathUsed = false;
-               fireBreathCooldown = maxFireBreathCooldown;
+                fireBreathCooldown = maxFireBreathCooldown;
 
-           }
-     }
+            }
+        }
 
         tickTime += deltaTime;
 
@@ -146,14 +160,19 @@ public class World {
                 if (humans.get(x).topFloor == true && humans.get(x).safe == false) {
                     freeCivilian++;
                     humans.get(x).safe = true;
+                    Random rand = new Random();
+                    humans.get(x).curFloor = rand.nextInt(2);
+                    humans.get(x).pos = new Vector2(rand.nextInt(360)+260,Floors.floorsY[humans.get(x).curFloor]);
+                    humans.get(x).topFloor = false;
+                    humans.get(x).safe = false;
                 }
             }
                 //Gameover equals true when 4 civilian reach the top
-                if (freeCivilian == 7) {
+                if (freeCivilian >= 4) {
                     gameOver = true;
                 }
             }
-
+            fire.Update(deltaTime);
             for (Human human : humans)
                 human.update(deltaTime);
 

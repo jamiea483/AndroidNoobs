@@ -21,6 +21,8 @@ public class Human {
     public boolean climbingStairs;
     public boolean topFloor;
     public boolean safe;
+    public int curFrame;
+    public boolean facingRight;
     public boolean canBeEaten;
 
     public Human(Vector2 position, int curFloor ) {

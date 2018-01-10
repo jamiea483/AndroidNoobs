@@ -8,6 +8,8 @@ public class Abilities {
 
     private Vector2 pos;
      public int floor;
+     public int curFrame;
+     public boolean active;
 
 
 
@@ -28,4 +30,8 @@ public class Abilities {
     }
 
 
+    public void Update(float deltaTime)
+    {
+
+    }
 }

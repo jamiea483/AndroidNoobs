@@ -20,13 +20,13 @@ public class MainMenuScreen extends Screen {
         int len = touchEvents.size();
         for(int i = 0; i < len; i++){
             TouchEvent event = touchEvents.get(i);
-            game.showBanner();
             if(event.type == TouchEvent.TOUCH_UP){
 
                     //New Game
                 if(inBounds(event, 175, 500 , 450, 70)){
                    game.setScreen(new GameScreen(game));
                     if(Settings.soundEnabled)
+                        game.showInterstitialAd();
                         game.unlock("A1");
                         Assets.click.play(1);
                     return;
@@ -35,7 +35,7 @@ public class MainMenuScreen extends Screen {
                 if(inBounds(event, 175, 500  + 150, 450, 70)) {
                     game.setScreen(new SettingsScreen(game));
                     if(Settings.soundEnabled)
-
+                        game.showBanner();
                         Assets.click.play(1);
                     return;
                 }
