@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- app_id -->
+    <string name="app_id" translatable="false">737352569613</string>
+    <!-- package_name -->
+    <string name="package_name" translatable="false">com.filip.TeenagedMutantMonsterRampage</string>
+    <!-- achievement Getting Started -->
+    <string name="achievement_getting_started" translatable="false">CgkIjaaN7boVEAIQAQ</string>
+    <!-- achievement The first of many -->
+    <string name="achievement_the_first_of_many" translatable="false">CgkIjaaN7boVEAIQAg</string>
+    <!-- achievement Getting the hang of things -->
+    <string name="achievement_getting_the_hang_of_things" translatable="false">CgkIjaaN7boVEAIQAw</string>
+    <!-- achievement Playing with fire -->
+    <string name="achievement_playing_with_fire" translatable="false">CgkIjaaN7boVEAIQBA</string>
+    <!-- achievement You tried -->
+    <string name="achievement_you_tried" translatable="false">CgkIjaaN7boVEAIQBQ</string>
+    <!-- leaderboard TMMR Leaderboard -->
+    <string name="leaderboard_tmmr_leaderboard" translatable="false">CgkIjaaN7boVEAIQBg</string>
+    <!-- Banner Add -->
+    <string name="banner_ad_unit_id">ca-app-pub-3168949510205748/6634583002</string>
+    <!-- Interstitial Add -->
+    <string name="Interstitial_ad_unit_id">ca-app-pub-3168949510205748/8137745676</string>
+</resources>
